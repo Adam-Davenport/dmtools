@@ -1,6 +1,9 @@
 # Ignoring sqlite3 files
 *.sqlite3
 
+# Ignoring pycache
+__pycache__
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

@@ -1,3 +1,6 @@
+# Ignoring sqlite3 files
+*.sqlite3
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

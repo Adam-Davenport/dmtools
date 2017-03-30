@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+# View functions
 def encounters(request):
 	return render(request, 'encounters/encounters.html')

@@ -19,9 +19,8 @@ class Monster(models.Model):
 		(Plain, 'Plain'),
 		(Underground, 'Underground')
 	)
-	# Applying terrain choices
 	terrain = models.CharField(
 		max_length = 128,
 		choices = terrain_choices,
-		default = Aquatic)
-
+		default = Aquatic
+	)

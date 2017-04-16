@@ -1,8 +1,13 @@
 from django.db import models
 
 class Monster(models.Model):
-	name = models.CharField(max_length=255)
+	name = models.CharField(max_length=255, primary_key=True)
 	challenge_rating = models.IntegerField()
+	def __str__(self):
+		return self.name
+
+class Monster_Environtment(models.Model):
+	name = models.ForeignKey(Monster)
 	# Setting up choices for environments
 	Aquatic = 'Aquatic'
 	Desert = 'Desert'
@@ -25,3 +30,4 @@ class Monster(models.Model):
 		choices = terrain_choices,
 		default = Aquatic
 	)
+

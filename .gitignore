@@ -1,5 +1,6 @@
-# Ignoring sqlite3 files
+# django
 *.sqlite3
+migrations
 
 # Ignoring pycache
 __pycache__

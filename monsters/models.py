@@ -6,8 +6,9 @@ class Monster(models.Model):
 	def __str__(self):
 		return self.name
 
-class Monster_Environtment(models.Model):
+class Monster_Environment(models.Model):
 	name = models.ForeignKey(Monster)
+	amount = models.CharField(max_length=6)
 	# Setting up choices for environments
 	Aquatic = 'Aquatic'
 	Desert = 'Desert'

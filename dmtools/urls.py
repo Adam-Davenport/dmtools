@@ -19,8 +19,8 @@ from dmtools import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-	url(r'^$', views.index),
-	url(r'^encounters/', include('encounters.urls')),
+    url(r'^$', views.index),
+    url(r'^encounters/', include('encounters.urls')),
     url(r'^monsters/', include('monsters.urls')),
     # url(r'^loot/', include('loot.urls'))
 ]

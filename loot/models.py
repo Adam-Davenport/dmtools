@@ -5,6 +5,7 @@ from math import floor
 class Loot(models.Model):
     name = models.CharField(max_length=128)
     cost = models.IntegerField()
+    category = models.CharField(max_length=128)
 
     def expanded_cost(self):
         gold = floor(self.cost)

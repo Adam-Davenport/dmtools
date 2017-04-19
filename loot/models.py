@@ -5,7 +5,16 @@ from math import floor
 class Loot(models.Model):
     name = models.CharField(max_length=128)
     cost = models.IntegerField()
-    category = models.CharField(max_length=128)
+    armor = 'Arm'
+    weapon = 'Wep'
+    category_choices = {
+        armor: 'Armor',
+        weapon: 'Weapon'
+    }
+    category = models.CharField(
+        max_length=128,
+        choices=category_choices
+    )
 
     def expanded_cost(self):
         gold = floor(self.cost)

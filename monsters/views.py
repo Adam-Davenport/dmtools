@@ -20,6 +20,11 @@ class Monster_Create(CreateView):
     form_class = CreateMonsterForm
 
 
+class Monster_Details(DetailView):
+    model = Monster
+    template_name = 'monsters/details.html'
+
+
 class Monster_Update(UpdateView):
     model = Monster
     template_name = 'monsters/form.html'

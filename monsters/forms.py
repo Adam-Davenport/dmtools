@@ -4,4 +4,4 @@ from monsters.models import Monster
 
 class CreateMonsterForm(forms.Form):
     model = Monster
-    fields = __all__
+    fields = '__all__'

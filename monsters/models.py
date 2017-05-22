@@ -2,8 +2,17 @@ from django.db import models
 
 
 class Monster(models.Model):
-    name = models.CharField(max_length=255, primary_key=True)
+    name = models.CharField(max_length=255)
+    levels = models.IntegerField()
     challenge_rating = models.IntegerField()
+    # Ability Scores
+    strength = models.IntegerField()
+    dexterity = models.IntegerField()
+    constitution = models.IntegerField()
+    intelligence = models.IntegerField()
+    wisdom = models.IntegerField()
+    charisma = models.IntegerField()
+    special_abilities = models.TextField()
 
     def __str__(self):
         return self.name

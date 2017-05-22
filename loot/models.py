@@ -8,8 +8,8 @@ class Loot(models.Model):
     armor = 'Arm'
     weapon = 'Wep'
     category_choices = {
-        armor: 'Armor',
-        weapon: 'Weapon'
+        (armor, 'Armor'),
+        (weapon, 'Weapon'),
     }
     category = models.CharField(
         max_length=128,

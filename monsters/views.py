@@ -20,6 +20,9 @@ class Monster_Create(LoginRequiredMixin, CreateView):
     template_name = 'monsters/form.html'
     form_class = CreateMonsterForm
 
+    def get_success_url(self):
+        return('/monsters/' + self.pk)
+
 
 class Monster_Details(LoginRequiredMixin, DetailView):
     model = Monster

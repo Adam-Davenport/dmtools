@@ -1,10 +1,16 @@
 from django.shortcuts import render
-from django.views.generic import(
+from monster.models import Monster
+from django.views.generic import (
     ListView, CreateView, DetailView, UpdateView, DeleteView, TemplateView
 )
 
-# Create your views here.
-def new(request):
-    return(render('monsters/new.html'))
-def monsters(request):
-    return(render('monsters/show.html'))
+
+class Monsters(ListView):
+    model = Monster
+    template_name = 'monsters/index.html'
+
+
+class Create_Monster(CreateView):
+    model = Monster
+    template_name = 'monsters/new.html'
+

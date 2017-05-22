@@ -4,6 +4,7 @@ from django.db import models
 class Monster(models.Model):
     name = models.CharField(max_length=255)
     levels = models.IntegerField()
+    hit_die = models.IntegerField()
     challenge_rating = models.IntegerField()
     # Ability Scores
     strength = models.IntegerField()

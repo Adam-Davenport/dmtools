@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'encounters',
-	'loot',
-	'monsters'
+    'encounters',
+    'loot',
+    'monsters'
 ]
 
 MIDDLEWARE = [
@@ -56,19 +56,19 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'dmtools.urls'
 
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [TEMPLATE_DIR],
+    'APP_DIRS': True,
+    'OPTIONS': {
+        'context_processors': [
+            'django.template.context_processors.debug',
+            'django.template.context_processors.request',
+            'django.contrib.auth.context_processors.auth',
+            'django.contrib.messages.context_processors.messages',
+        ],
     },
+},
 ]
 
 WSGI_APPLICATION = 'dmtools.wsgi.application'
@@ -101,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
+    ]
 
 
 # Internationalization
@@ -124,5 +124,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # Loading static directory
 STATICFILES_DIRS = [
-    STATIC_DIR
+        STATIC_DIR
 ]

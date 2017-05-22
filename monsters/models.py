@@ -9,7 +9,7 @@ class Monster(models.Model):
         return self.name
 
 
-class Monster_Environtment(models.Model):
+class Monster_Environment(models.Model):
     name = models.ForeignKey(Monster)
     # Setting up choices for environments
     Aquatic = 'Aquatic'

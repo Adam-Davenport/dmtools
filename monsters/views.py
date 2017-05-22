@@ -33,3 +33,9 @@ class Monster_Update(LoginRequiredMixin, UpdateView):
     model = Monster
     template_name = 'monsters/form.html'
     form_class = CreateMonsterForm
+
+
+class Monster_Delete(LoginRequiredMixin, DeleteView):
+    model = Monster
+    template_name = 'monster/delete.html'
+    success_url = '/monsters'

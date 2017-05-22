@@ -9,7 +9,6 @@ from django.views.generic import (
 class Monsters(ListView):
     model = Monster
     template_name = 'monsters/index.html'
-    form_class = CreateMonsterForm
 
     def get_queryset(self):
         return Monster.objects.all().order_by('name')
@@ -17,5 +16,11 @@ class Monsters(ListView):
 
 class Create_Monster(CreateView):
     model = Monster
-    template_name = 'monsters/new.html'
+    template_name = 'monsters/form.html'
+    form_class = CreateMonsterForm
 
+
+class Update_Monster(UpdateView):
+    model = Monster
+    template_name = 'monsters/form.html'
+    form_class = CreateMonsterForm

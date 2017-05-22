@@ -23,3 +23,13 @@ class Loot(models.Model):
         remainder = (remainder % 1) * 10
         copper = floor(remainder)
         return [gold, silver, copper]
+
+    def combine_cost(self, cost):
+        gold = cost[0]
+        silver = cost[1]
+        copper = cost[2]
+        total_cost = gold * 100
+        total_cost += silver * 10
+        total_cost += copper * 10
+        self.cost = total_cost
+        self.save()

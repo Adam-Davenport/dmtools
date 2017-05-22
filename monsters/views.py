@@ -14,13 +14,13 @@ class Monsters(ListView):
         return Monster.objects.all().order_by('name')
 
 
-class Create_Monster(CreateView):
+class Monster_Create(CreateView):
     model = Monster
     template_name = 'monsters/form.html'
     form_class = CreateMonsterForm
 
 
-class Update_Monster(UpdateView):
+class Monster_Update(UpdateView):
     model = Monster
     template_name = 'monsters/form.html'
     form_class = CreateMonsterForm

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from monster.models import Monster
+from monsters.models import Monster
 from monsters.forms import CreateMonsterForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (

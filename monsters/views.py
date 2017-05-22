@@ -18,3 +18,4 @@ class Monsters(ListView):
 class Create_Monster(CreateView):
     model = Monster
     template_name = 'monsters/new.html'
+

@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^encounters/', include('encounters.urls')),
     url(r'^monsters/', include('monsters.urls')),
-    # url(r'^loot/', include('loot.urls'))
+    # url(r'^loot/', include('loot.urls')),
+    # url(r'^tools/', include('tools.urls')),
 ]

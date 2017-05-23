@@ -30,7 +30,9 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #f8f8f8;
+    border-color: #e7e7e7;
+    border-width: 5px;
     /*-webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -38,7 +40,7 @@
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: 150px;
 }
 
 #page-content-wrapper {
@@ -49,7 +51,7 @@
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
-    margin-right: -250px;
+    margin-right: -150px;
 }
 
 /* Sidebar Styles */
@@ -57,7 +59,7 @@
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 150px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -71,13 +73,13 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    /*color: #999999;*/
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
+    /*color: #fff;*/
+    /*background: rgba(255,255,255,0.2);*/
 }
 
 .sidebar-nav li a:active,
@@ -92,11 +94,11 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    /*color: #999999;*/
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+    /*color: #fff;*/
     background: none;
 }
 
@@ -106,7 +108,7 @@
     }
 
     #wrapper.toggled {
-        padding-left: 250px;
+        padding-left: 150px;
     }
 
     #sidebar-wrapper {
@@ -114,7 +116,7 @@
     }
 
     #wrapper.toggled #sidebar-wrapper {
-        width: 250px;
+        width: 150px;
     }
 
     #page-content-wrapper {

@@ -73,7 +73,7 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    /*color: #999999;*/
+    color: #777;
 }
 
 .sidebar-nav li a:hover {
@@ -94,7 +94,7 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    /*color: #999999;*/
+    color: #777;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {

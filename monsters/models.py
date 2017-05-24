@@ -27,7 +27,7 @@ class Monster(models.Model):
     def display_abilities(self):
         attacks = Monster_Attacks.objects.filter(monster = self.pk)
         for attack in attacks:
-            attack = calculate_attack(attack)
+            attack = self.calculate_attack(attack)
 
     def calculate_attack(self, attack):
         attack_ability = self.get_ability(attack.ability_modifier)
@@ -90,4 +90,4 @@ class Monster_Environment(models.Model):
     )
 
     def __str__(self):
-        return self.name + ': ' + self.terrain
+        return self.monster + ': ' + self.terrain

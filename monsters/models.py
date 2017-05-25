@@ -45,6 +45,22 @@ class Monster(models.Model):
         }
         return abilities[ability]
 
+    # Get the modifier of a given ability score
+    def get_modifier(self, ability):
+        mod = math.floor((ability-10)/2)
+        return mod
+
+    # Get the modifier of all ability scores in a list
+    def modifiers(self):
+        modifiers = [
+            self.get_modifier(self.strength),
+            self.get_modifier(self.dexterity),
+            self.get_modifier(self.constitution),
+            self.get_modifier(self.intelligence),
+            self.get_modifier(self.wisdom),
+        ]
+        return modifiers
+
     def __str__(self):
         return self.name
 

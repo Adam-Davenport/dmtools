@@ -1,20 +1,20 @@
-from django import forms
+from django.forms import ModelForm
 from monsters.models import Monster, Monster_Attacks, Monster_Environment
 
 
-class MonsterForm(forms.Form):
+class MonsterForm(ModelForm):
     class Meta:
         model = Monster
         fields = '__all__'
 
 
-class MonsterAttackForm(forms.Form):
+class MonsterAttackForm(ModelForm):
     class Meta:
         model = Monster_Attacks
         fields = '__all__'
 
 
-class MonsterEnvironmentForm(forms.Form):
+class MonsterEnvironmentForm(ModelForm):
     class Meta:
         model = Monster_Environment
         fields = '__all__'

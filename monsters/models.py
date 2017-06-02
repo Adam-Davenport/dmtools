@@ -1,5 +1,5 @@
 from django.db import models
-
+from math import floor
 
 class Monster(models.Model):
     name = models.CharField(max_length=255)
@@ -31,7 +31,7 @@ class Monster(models.Model):
 
     def calculate_attack(self, attack):
         attack_ability = self.get_ability(attack.ability_modifier)
-        attack.bonus = math.floor((attack_ability-10)/2)
+        attack.bonus = floor((attack_ability-10)/2)
         return attack
 
     def get_ability(self, ability):
@@ -47,7 +47,7 @@ class Monster(models.Model):
 
     # Get the modifier of a given ability score
     def get_modifier(self, ability):
-        mod = math.floor((ability-10)/2)
+        mod = floor((ability-10)/2)
         return mod
 
     # Get the modifier of all ability scores in a list
@@ -58,6 +58,7 @@ class Monster(models.Model):
             self.get_modifier(self.constitution),
             self.get_modifier(self.intelligence),
             self.get_modifier(self.wisdom),
+            self.get_modifier(self.charisma)
         ]
         return modifiers
 

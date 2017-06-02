@@ -17,15 +17,15 @@ class Monster(models.Model):
     size = models.CharField(choices=size_choices, default='M', max_length=1)
     challenge_rating = models.IntegerField(default=1)
     # Ability Scores
-    strength = models.IntegerField(default=10)
-    dexterity = models.IntegerField(default=10)
-    constitution = models.IntegerField(default=10)
-    intelligence = models.IntegerField(default=10)
-    wisdom = models.IntegerField(default=10)
-    charisma = models.IntegerField(default=10)
+    strength = models.IntegerField(default=10, blank=True)
+    dexterity = models.IntegerField(default=10, blank=True)
+    constitution = models.IntegerField(default=10, blank=True)
+    intelligence = models.IntegerField(default=10, blank=True)
+    wisdom = models.IntegerField(default=10, blank=True)
+    charisma = models.IntegerField(default=10, blank=True)
 
     def display_abilities(self):
-        attacks = Monster_Attacks.objects.filter(monster = self.pk)
+        attacks = Monster_Attacks.objects.filter(monster=self.pk)
         for attack in attacks:
             attack = self.calculate_attack(attack)
 

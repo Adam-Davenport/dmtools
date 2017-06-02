@@ -15,7 +15,7 @@ class Monsters(ListView):
         return Monster.objects.all().order_by('name')
 
 
-class Monster_Create(LoginRequiredMixin, CreateView):
+class MonsterCreate(LoginRequiredMixin, CreateView):
     model = Monster
     template_name = 'monsters/form.html'
     form_class = MonsterForm
@@ -24,7 +24,7 @@ class Monster_Create(LoginRequiredMixin, CreateView):
         return('/monsters/' + self.pk)
 
 
-class Monster_Details(LoginRequiredMixin, DetailView):
+class MonsterDetails(LoginRequiredMixin, DetailView):
     model = Monster
     template_name = 'monsters/details.html'
 
@@ -35,7 +35,7 @@ class Monster_Update(LoginRequiredMixin, UpdateView):
     form_class = MonsterForm
 
 
-class Monster_Delete(LoginRequiredMixin, DeleteView):
+class MonsterDelete(LoginRequiredMixin, DeleteView):
     model = Monster
     template_name = 'monster/delete.html'
     success_url = '/monsters'

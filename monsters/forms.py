@@ -2,7 +2,7 @@ from django import forms
 from monsters.models import Monster, Monster_Attacks, Monster_Environment
 
 
-class CreateMonsterForm(forms.Form):
+class MonsterForm(forms.Form):
     model = Monster
     fields = '__all__'
 
@@ -12,6 +12,6 @@ class MonsterAttackForm(forms.Form):
     fields = '__all__'
 
 
-class MonsterEnvironmentForm(forms.form):
+class MonsterEnvironmentForm(forms.Form):
     model = Monster_Environment
     fields = '__all__'

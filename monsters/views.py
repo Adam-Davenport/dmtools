@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from monsters.models import Monster
-from monsters.forms import CreateMonsterForm
+from monsters.forms import MonsterForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (
     ListView, CreateView, DetailView, UpdateView, DeleteView, TemplateView
@@ -18,7 +18,7 @@ class Monsters(ListView):
 class Monster_Create(LoginRequiredMixin, CreateView):
     model = Monster
     template_name = 'monsters/form.html'
-    form_class = CreateMonsterForm
+    form_class = MonsterForm
 
     def get_success_url(self):
         return('/monsters/' + self.pk)
@@ -32,7 +32,7 @@ class Monster_Details(LoginRequiredMixin, DetailView):
 class Monster_Update(LoginRequiredMixin, UpdateView):
     model = Monster
     template_name = 'monsters/form.html'
-    form_class = CreateMonsterForm
+    form_class = MonsterForm
 
 
 class Monster_Delete(LoginRequiredMixin, DeleteView):

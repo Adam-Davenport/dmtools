@@ -4,7 +4,7 @@ from django.test import TestCase
 
 class Test_Monster_Model(TestCase):
 
-    def test_basic(self):
+    def setUp(self):
         monster = Monster.objects.create(
             name='Test Goblin',
             levels=1,
@@ -17,7 +17,20 @@ class Test_Monster_Model(TestCase):
             wisdom=11,
             charisma=9
         )
+
+    def test_basic(self):
+        monster = Monster.objects.get(name='Test Goblin')
         self.assertEqual(str(monster), 'Test Goblin')
         self.assertEqual(monster.levels, 1)
         self.assertEqual(monster.size, 'S')
         self.assertEqual(monster.modifiers(), [1, 2, -1, -2, 0, -1])
+
+    def test_attacks(self):
+        monster = Monster.objects.get(name='Test Goblin')
+        monster_attack = Monster_Attacks.objects.create(
+            monster=monster,
+            ability_modifier=str,
+            ability_damage=True
+        )
+        monster.get_attacks()
+

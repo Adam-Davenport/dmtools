@@ -24,7 +24,7 @@ class Monster(models.Model):
     wisdom = models.IntegerField(default=10, blank=True)
     charisma = models.IntegerField(default=10, blank=True)
 
-    def display_abilities(self):
+    def get_attacks(self):
         attacks = Monster_Attacks.objects.filter(monster=self.pk)
         for attack in attacks:
             attack = self.calculate_attack(attack)

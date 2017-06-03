@@ -1,6 +1,7 @@
 from django.db import models
 from math import floor
 
+
 class Monster(models.Model):
     name = models.CharField(max_length=255)
     levels = models.IntegerField(default=1)

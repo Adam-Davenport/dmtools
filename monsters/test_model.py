@@ -29,8 +29,11 @@ class Test_Monster_Model(TestCase):
         monster = Monster.objects.get(name='Test Goblin')
         monster_attack = Monster_Attacks.objects.create(
             monster=monster,
-            ability_modifier=str,
+            ability_modifier='str',
             ability_damage=True
         )
         monster.get_attacks()
+        attack = monster.attacks[0]
+        monster.calculate_attack(attack)
+        self.assertEqual()
 

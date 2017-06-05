@@ -33,6 +33,9 @@ class Monster(models.Model):
     def calculate_attack(self, attack):
         attack_ability = self.get_ability(attack.ability_modifier)
         attack.bonus = floor((attack_ability-10)/2) + attack.attack_bonus
+        attack.damage = attack.damage_bonus
+        if attack.ability_damage is True:
+            attack.damage_bonus += attack.ability_modifier
         return attack
 
     def get_ability(self, ability):

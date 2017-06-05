@@ -40,4 +40,3 @@ class Test_Monster_Model(TestCase):
         self.assertEqual(attack.bonus, 2)
         self.assertEqual(attack.ability_modifier, 'str')
         self.assertEqual(attack.damage_bonus, 0)
-

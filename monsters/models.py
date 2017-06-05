@@ -32,7 +32,7 @@ class Monster(models.Model):
 
     def calculate_attack(self, attack):
         attack_ability = self.get_ability(attack.ability_modifier)
-        attack.bonus = floor((attack_ability-10)/2)
+        attack.bonus = floor((attack_ability-10)/2) + attack.attack_bonus
         return attack
 
     def get_ability(self, ability):

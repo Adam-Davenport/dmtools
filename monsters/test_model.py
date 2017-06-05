@@ -30,10 +30,12 @@ class Test_Monster_Model(TestCase):
         monster_attack = Monster_Attacks.objects.create(
             monster=monster,
             ability_modifier='str',
-            ability_damage=True
+            ability_damage=True,
+            attack_bonus=1,
+            damage_bonus=0
         )
         monster.get_attacks()
         attack = monster.attacks[0]
         monster.calculate_attack(attack)
-        self.assertEqual()
+        self.assertEqual(attack.bonus, 2)
 

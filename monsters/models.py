@@ -78,8 +78,13 @@ class Monster_Attacks(models.Model):
         ('wis', 'Wisdom'),
         ('cha', 'Charisma')
     )
-    ability_modifier = models.CharField(choices=ability_choices, default='str', max_length=3)
+    ability_modifier = models.CharField(
+        choices=ability_choices,
+        default='str',
+        max_length=3)
     ability_damage = models.BooleanField()
+    attack_bonus = models.IntegerField()
+    damage_bonus = models.IntegerField()
 
 
 class Monster_Environment(models.Model):

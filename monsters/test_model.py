@@ -9,6 +9,7 @@ class Test_Monster_Model(TestCase):
             name='Test Goblin',
             levels=1,
             hit_die=4,
+            challenge_rating=1,
             size='S',
             strength=12,
             dexterity=15,
@@ -40,3 +41,7 @@ class Test_Monster_Model(TestCase):
         self.assertEqual(attack.bonus, 2)
         self.assertEqual(attack.ability_modifier, 'str')
         self.assertEqual(attack.damage_bonus, 0)
+
+    def test_xp(self):
+        monster = Monster.objects.get(name='Test Goblin')
+        self.assertEqual(monster.xp(), 200)

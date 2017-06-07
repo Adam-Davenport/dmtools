@@ -66,6 +66,21 @@ class Monster(models.Model):
         ]
         return modifiers
 
+    # Xp chart for challenge ratings
+    def xp(self):
+        chart = {
+            0: 10,
+            0.125: 25,
+            0.25: 50,
+            0.5: 100,
+            1: 200,
+            2: 450,
+            3: 700,
+            4: 1100,
+            5: 1800
+        }
+        return chart[self.challenge_rating]
+
     def __str__(self):
         return self.name
 

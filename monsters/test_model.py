@@ -40,7 +40,7 @@ class Test_Monster_Model(TestCase):
         monster.calculate_attack(attack)
         self.assertEqual(attack.bonus, 2)
         self.assertEqual(attack.ability_modifier, 'str')
-        self.assertEqual(attack.damage_bonus, 0)
+        self.assertEqual(attack.damage, 1)
 
     def test_xp(self):
         monster = Monster.objects.get(name='Test Goblin')

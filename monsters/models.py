@@ -35,7 +35,9 @@ class Monster(models.Model):
         attack.bonus = floor((attack_ability-10)/2) + attack.attack_bonus
         attack.damage = attack.damage_bonus
         if attack.ability_damage is True:
-            attack.damage_bonus += attack.ability_modifier
+            ability = self.get_ability(attack.ability_modifier)
+            mod = self.get_modifier(ability)
+            attack.damage += mod
         return attack
 
     def get_ability(self, ability):

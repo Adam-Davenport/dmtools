@@ -6,6 +6,7 @@ class Monster(models.Model):
     name = models.CharField(max_length=255)
     levels = models.IntegerField(default=1)
     hit_die = models.IntegerField(default=1)
+    challenge_rating = models.IntegerField(default=1)
     # Monster size
     size_choices = (
         ('T', 'Tiny'),
@@ -16,7 +17,6 @@ class Monster(models.Model):
         ('G', 'Gargantuan')
     )
     size = models.CharField(choices=size_choices, default='M', max_length=1)
-    challenge_rating = models.IntegerField(default=1)
     # Ability Scores
     strength = models.IntegerField(default=10, blank=True)
     dexterity = models.IntegerField(default=10, blank=True)

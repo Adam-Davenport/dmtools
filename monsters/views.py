@@ -29,7 +29,7 @@ class MonsterDetails(LoginRequiredMixin, DetailView):
     template_name = 'monsters/details.html'
 
 
-class Monster_Update(LoginRequiredMixin, UpdateView):
+class MonsterUpdate(LoginRequiredMixin, UpdateView):
     model = Monster
     template_name = 'monsters/form.html'
     form_class = MonsterForm

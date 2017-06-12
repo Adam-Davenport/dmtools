@@ -4,7 +4,8 @@ from math import floor
 
 class Monster(models.Model):
     name = models.CharField(max_length=255)
-    levels = models.IntegerField(default=1)
+    level = models.IntegerField(default=1)
+    race = models.CharField(max_length=50)
     hit_die = models.IntegerField(default=1)
     challenge_rating = models.IntegerField(default=1)
     # Monster size

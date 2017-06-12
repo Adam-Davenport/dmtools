@@ -34,7 +34,7 @@
 <div id="page-content-wrapper">
   <h1>Monsters</h1>
   {% for monster in monster_list %}
-    <h2>{{monster.name}}</h2>
+    <h2><a href="{% url 'monsters:details' pk=monster.pk%}">{{monster.name}}</a></h2>
   {% endfor %}
 </div>
 </div>

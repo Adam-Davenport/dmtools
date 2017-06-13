@@ -10,6 +10,7 @@ class Monster(models.Model):
     challenge_rating = models.IntegerField(default=1)
     speed = models.IntegerField(default=30)
     armor_class = models.IntegerField(default=10)
+    loot = models.CharField(max_length=500)
     # Monster size
     size_choices = (
         ('T', 'Tiny'),
@@ -179,5 +180,5 @@ class Monster_Environment(models.Model):
 
 class Monster_Special(models.Model):
     monster = models.ForeignKey(Monster)
-    special = models.CharField()
-    text = models.CharField()
+    special = models.CharField(max_length=255)
+    text = models.CharField(max_length=999)

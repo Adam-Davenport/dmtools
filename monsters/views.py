@@ -33,6 +33,7 @@ class MonsterDetails(DetailView):
             str(monster.modifiers()[2]*monster.level),
             str(monster.level*((int(monster.hit_die/2))+1))
         )
+        monster.get_attacks()
         return monster
 
 

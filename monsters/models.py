@@ -111,6 +111,19 @@ class Monster(models.Model):
         }
         return chart[self.challenge_rating]
 
+    def proficiency_bonus(self):
+        lvl = self.level
+        if lvl < 5:
+            return 2
+        elif lvl < 9:
+            return 3
+        elif lvl < 13:
+            return 4
+        elif lvl < 17:
+            return 5
+        else:
+            return 6
+
     def __str__(self):
         return self.name
 

@@ -8,6 +8,7 @@ class Monster(models.Model):
     race = models.CharField(max_length=50)
     hit_die = models.IntegerField(default=1)
     challenge_rating = models.IntegerField(default=1)
+    speed = models.IntegerField(default=30)
     # Monster size
     size_choices = (
         ('T', 'Tiny'),

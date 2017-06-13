@@ -21,7 +21,7 @@ class MonsterCreate(LoginRequiredMixin, CreateView):
     form_class = MonsterForm
 
 
-class MonsterDetails(LoginRequiredMixin, DetailView):
+class MonsterDetails(DetailView):
     model = Monster
     template_name = 'monsters/details.html'
 

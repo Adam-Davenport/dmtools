@@ -175,3 +175,9 @@ class Monster_Environment(models.Model):
 
     def __str__(self):
         return self.monster + ': ' + self.terrain
+
+
+class Monster_Special(models.Model):
+    monster = models.ForeignKey(Monster)
+    special = models.CharField()
+    text = models.CharField()

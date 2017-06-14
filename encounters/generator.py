@@ -1,12 +1,11 @@
-from monsters.models import Monster_Environment
+from monsters.models import Monster_Environment, Monster
 import random
 
 
-def random_encounter(environment):
-    # Assuming evnironment is already checked
-    try:
-        monsters = Monster_Environment.objects.filter(environment=environment)
-        for m in monsters:
-            print(m.name)
-    except:
-        print('nope')
+class Random_Encounter():
+
+    def __init__(self, environment):
+        self.environment = environment
+    
+    def get_monsters(self):
+        monsters = Monster.objects.filter(environment=self.environment)

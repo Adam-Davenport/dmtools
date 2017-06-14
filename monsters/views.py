@@ -19,6 +19,7 @@ class MonsterCreate(LoginRequiredMixin, CreateView):
     model = Monster
     template_name = 'monsters/form.html'
     form_class = MonsterForm
+    success_url = '/monsters'
 
 
 class MonsterDetails(DetailView):

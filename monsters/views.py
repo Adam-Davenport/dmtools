@@ -35,6 +35,7 @@ class MonsterDetails(DetailView):
             str(monster.level*((int(monster.hit_die/2))+1))
         )
         monster.get_attacks()
+        monster.get_specials()
         return monster
 
 

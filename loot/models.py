@@ -5,11 +5,11 @@ from math import floor
 class Loot(models.Model):
     name = models.CharField(max_length=128)
     cost = models.IntegerField()
-    armor = 'Arm'
-    weapon = 'Wep'
     category_choices = {
-        (armor, 'Armor'),
-        (weapon, 'Weapon'),
+        ('Arm', 'Armor'),
+        ('Jnk', 'Junk'),
+        ('Mag', 'Magic'),
+        ('Wep', 'Weapon'),
     }
     category = models.CharField(
         max_length=128,

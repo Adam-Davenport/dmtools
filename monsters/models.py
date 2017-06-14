@@ -11,6 +11,8 @@ class Monster(models.Model):
     speed = models.IntegerField(default=30)
     armor_class = models.IntegerField(default=10)
     loot = models.CharField(max_length=500)
+    skills = models.CharField(max_length=50)
+    senses = models.CharField(max_length=50)
     # Monster size
     size_choices = (
         ('T', 'Tiny'),

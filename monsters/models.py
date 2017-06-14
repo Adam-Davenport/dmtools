@@ -36,6 +36,9 @@ class Monster(models.Model):
         for attack in self.attacks:
             attack = self.calculate_attack(attack)
 
+    def get_specials(self):
+        self.specials = Monster_Special.objects.filter(monster=self.pk)
+
     def calculate_attack(self, attack):
         attack_ability = self.get_ability(attack.ability_modifier)
         attack.bonus = floor((attack_ability-10)/2) + attack.attack_bonus

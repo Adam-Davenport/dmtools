@@ -1,4 +1,37 @@
 {% extends "base.html" %}
 {% block body_block %}
-<h1>monster.name</h1>
+<h1>{{ monster.name }}</h1>
+<p>Level {{monster.level}} {{monster.size}} {{monster.race}}</p>
+<p>Health: {{monster.health}}</p>
+<p>Speed: {{monster.speed}} feet</p>
+
+<table class="table">
+    <tr>
+        <th>STR</th>
+        <th>DEX</th>
+        <th>CON</th>
+        <th>INT</th>
+        <th>WIS</th>
+        <th>CHA</th>
+    </tr>
+    <tr>
+        <th>{{monster.strength}} ({{monster.modifiers.0}})</th>
+        <th>{{monster.dexterity}} ({{monster.modifiers.1}})</th>
+        <th>{{monster.constitution}} ({{monster.modifiers.2}})</th>
+        <th>{{monster.intelligence}} ({{monster.modifiers.3}})</th>
+        <th>{{monster.wisdom}} ({{monster.modifiers.4}})</th>
+        <th>{{monster.charisma}} ({{monster.modifiers.5}})</th>
+    </tr>
+</table>
+<p><strong>Challenge:</strong> {{monster.challenge_rating}} ({{monster.xp}})</p>
+
+<h2>Attacks</h2>
+{% for attack in monster.attacks %}
+    <p>{{attack}}</p>
+{% endfor %}
+<h2>Special</h2>
+{% for ability in monster.abilities %}
+    <p>{{ability}}</p>
+{% endfor %}
+<p><strong>Loot: </strong>{{monster.loot}}</p>
 {% endblock %}
